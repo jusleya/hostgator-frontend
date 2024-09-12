@@ -1,3 +1,4 @@
+// prettier-ignore
 import styled, { css } from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -14,19 +15,19 @@ const MODIFIER_CONFIG = {
   lineDecoration: () => 'text-decoration: line-through;',
 };
 
-export const Text = styled.h4.attrs(({
-  size, lineHeight, textAlign, margin,
-}) => ({
-  size: size ?? '13px',
-  lineHeight: lineHeight ?? '19px',
-  textAlign: textAlign ?? 'left',
-  margin: margin ?? 0,
-}))`
+export const Text = styled.h4.attrs(
+  ({ size, lineHeight, textAlign, margin }) => ({
+    size: size ?? '13px',
+    lineHeight: lineHeight ?? '19px',
+    textAlign: textAlign ?? 'left',
+    margin: margin ?? 0,
+  }),
+)`
   font-size: ${({ size }) => size};
   margin: ${({ margin }) => margin};
   text-align: ${({ textAlign }) => textAlign};
   line-height: ${({ lineHeight }) => lineHeight};
-  
+
   ${({ theme: { colors } }) => css`
     color: ${colors.auxiliary.black};
   `}
@@ -46,20 +47,20 @@ export const Title = styled.h1.attrs(({ size, mb, mt }) => ({
   ${({ theme: { colors } }) => css`
     color: ${colors.auxiliary.white};
   `}
+
   ${applyStyleModifiers(MODIFIER_CONFIG)};
 `;
 
-export const Subtitle = styled.h3.attrs(({
-  width,
-  lineHeight,
-  fontWeigth,
-  letteSpacing,
+export const Subtitle = styled.h3.attrs(
+  ({
+ width, lineHeight, fontWeigth, letteSpacing 
 }) => ({
-  width: width ?? 'auto',
-  fontWeigth: fontWeigth ?? 600,
-  lineHeight: lineHeight ?? '27px',
-  letteSpacing: letteSpacing ?? '0px',
-}))`
+    width: width ?? 'auto',
+    fontWeigth: fontWeigth ?? 600,
+    lineHeight: lineHeight ?? '27px',
+    letteSpacing: letteSpacing ?? '0px',
+  }),
+)`
   font-size: 16px;
   text-align: center;
   width: ${({ width }) => width};
